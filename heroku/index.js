@@ -25,14 +25,9 @@ app.get('/', function(req, res) {
   res.send('<pre>' + JSON.stringify(received_updates, null, 2) + '</pre>');
 });
 
-app.get(['/facebook', '/instagram'], function(req, res) {   
-  if (
-    req.param('hub.mode') == 'subscribe'
-  ) {
-    res.send(req.param('hub.challenge'));
-  } else {
-    res.sendStatus(400);
-  }
+app.get(['/facebook', '/instagram'], function(req, res) {
+  console.log(req.query);
+  res.send(req.query.'hub.challenge');
 });
 
 app.post('/facebook', function(req, res) {
