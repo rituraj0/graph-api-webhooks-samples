@@ -26,8 +26,8 @@ app.get('/', function(req, res) {
 });
 
 app.get(['/facebook', '/instagram'], function(req, res) {
-  //console.log(req.query);
-  res.send("Hello");
+  console.log(req.query);
+  res.send(req.query['hub.challenge']);
 });
 
 app.post('/facebook', function(req, res) {
