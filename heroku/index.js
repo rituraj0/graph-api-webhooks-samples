@@ -32,8 +32,6 @@ app.get(['/facebook', '/instagram'], function(req, res) {
 
 app.post('/facebook', function(req, res) {
   console.log("\n\n\Started\n\n");
-  console.log(req.body);
-  console.log(req.body['entry'][0]['changes']);
   console.log(JSON.stringify(req.body));
   console.log("\n\nFinished\n\n");
   res.sendStatus(200);
